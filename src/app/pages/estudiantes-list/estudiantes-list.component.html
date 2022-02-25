@@ -1,0 +1,31 @@
+<div class="text-center">
+    <h1>ESTUDIANTES</h1>
+    <button type="button" class="btn btn-dark" (click)="add()">Agregar</button>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <th>nombre</th>
+        <th>apellido</th>
+        <th>edad</th>
+        <th>carrera</th>
+        <th>Opciones</th>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let estudiante of listEstudiantes">
+          <td>{{estudiante.nombre}}</td>
+          <td>{{estudiante.apellido}}</td>
+          <td>{{estudiante.edad}}</td>
+          <td>{{estudiante.carrera}}</td>
+          <td>
+            <i [routerLink]="['form-estudiante/',estudiante.id]" class="far fa-edit text-primary"></i>
+            <i (click)="delete(estudiante)" class="far fa-trash-alt text-danger"></i>
+          </td>
+        </tr>
+      </tbody>
+      
+</table>
+<div class="text-center" *ngIf="listEstudiantes.length==0 ">
+    <h3>No hay estudiantes registardos</h3>
+</div>

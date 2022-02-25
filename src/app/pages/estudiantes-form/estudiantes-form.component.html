@@ -1,0 +1,28 @@
+
+
+<div class="form-est">
+    <h1 class="text-center">{{titulo | uppercase}}</h1>
+    <form class="mt-3" [formGroup]="form" (ngSubmit)="agregar()" >
+        <div class="mb-3">
+            <input formControlName="nombre" type="text" class="form-control form-control-lg" placeholder="Nombre">
+            
+        </div>
+        <div class="mb-3">
+            <input formControlName="apellido" type="text" class="form-control form-control-lg" placeholder="Apellido">
+            
+        </div>
+        <div class="mb-3">
+            <input formControlName="edad" type="number" class="form-control form-control-lg" placeholder="Edad">
+            
+        </div>
+        <div class="mb-3">
+            <input formControlName="carrera" type="text" class="form-control form-control-lg" placeholder="Carrera">
+            
+        </div>
+    
+        <div class="mb-3">
+            <button routerLink="/" class="btn btn-dark btn-lg float-start">VOLVER</button>
+            <button [disabled]="form.invalid" type="submit" class="btn btn-dark btn-lg float-end">GUARDAR</button>
+        </div>
+    </form>
+</div>
